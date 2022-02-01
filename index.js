@@ -1,5 +1,4 @@
-var numeric = require('numeric');
-
+import numeric from 'numeric';
 
 var distanceFunctions = {
   'linear': distanceLinear,
@@ -12,7 +11,7 @@ var distanceFunctions = {
 };
 
 
-function RBF(points, values, distanceFunction, epsilon) {
+export function RBF(points, values, distanceFunction, epsilon) {
 
   var distance = distanceFunctions.linear;
 
@@ -129,5 +128,3 @@ function distanceInverseMultiquadric(r, epsilon) {
 function distanceMultiquadric(r, epsilon) {
   return Math.sqrt(Math.pow(r / epsilon, 2) + 1);
 }
-
-module.exports = RBF;
